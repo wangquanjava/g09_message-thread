@@ -51,10 +51,13 @@ var controlFun = {
 		})
 		$("#btn-next").click(function() {
 			if (controlFun.musicType == "1") {
+//				顺序
 				var temp = controlFun.currentMusic.parent().next();
 			}else if(controlFun.musicType == "2"){
+//				单曲
 				var temp = controlFun.currentMusic.parent();
 			}else if(controlFun.musicType == "3"){
+//				随机
 				//从<ol>下的<li>中找到随机的一个元素对象，因为使用[]会把jquery对象转成js对象，所以需要再转回来
 				var temp = $(controlFun.musicList.children()[parseInt((controlFun.musicList.children().length-1)* Math.random())]);
 			}
