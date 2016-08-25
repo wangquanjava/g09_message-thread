@@ -15,7 +15,8 @@
 
 	<!-- 注解驱动 -->
 	<mvc:annotation-driven />
-
+	<!-- 静态资源 -->
+	<mvc:default-servlet-handler/>
 	<!-- 配置扫描controller -->
 	<context:component-scan base-package="com.osc.controller" />
 
@@ -24,5 +25,17 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<!-- 允许JVM参数覆盖 -->
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<!-- 忽略没有找到的资源文件 -->
+		<property name="ignoreResourceNotFound" value="true" />
+		<!-- 配置资源文件 -->
+		<property name="locations">
+			<list>
+				<value>classpath:env.properties</value>
+			</list>
+		</property>
+	</bean>
 </beans>

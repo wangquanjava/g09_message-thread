@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name="musicplayer")
+@Entity
+@Table(name = "playlist")
 public class MusicEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -23,6 +25,19 @@ public class MusicEntity {
 	}
 	public void setMusicName(String musicName) {
 		this.musicName = musicName;
+	}
+	public MusicEntity(Integer id, String musicName) {
+		super();
+		this.id = id;
+		this.musicName = musicName;
+	}
+	public MusicEntity(String musicName) {
+		super();
+		this.musicName = musicName;
+	}
+	public MusicEntity() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	
