@@ -20,8 +20,20 @@ public class MessageController {
 	 * @return
 	 */
 	@RequestMapping(value = "refresh",method = RequestMethod.GET)
-	public ResponseEntity<ResultVO> refresh(){
-		MessageUtil.sendMessage("这里是短信内容");
-		return ResponseEntity.status(HttpStatus.OK).body(new ResultVO("发送成功"));
+	public void refresh(){
+		while (true) {
+			try {
+				Thread.sleep(1000l);
+				MessageUtil.sendMessage("这里是短信内容");
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+//		return ResponseEntity.status(HttpStatus.OK).body(new ResultVO("发送成功"));
+	}
+	
+	@RequestMapping("shutdown")
+	public void shutDown(){
+		MessageUtil.shutdownMessageThread();
 	}
 }

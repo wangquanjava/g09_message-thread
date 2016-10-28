@@ -27,7 +27,7 @@ public class MessageUtil {
 			TaskThread taskThread = new TaskThread();
 			taskThread.setName("SendMessage"+i);
 			executor.submit(taskThread);
-			logger.warn(taskThread+"发送短信线程启动");
+			logger.error(taskThread+"发送短信线程启动");
 		}
 	}
 	//回收线程
