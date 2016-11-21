@@ -5,6 +5,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <property name="java-output-path" value="/g03_audioplayer/target/classes"/>
-        <property name="context-root" value="AudioPlayer"/>
+        <property name="context-root" value="g09_message-thread"/>
     </wb-module>
 </project-modules>

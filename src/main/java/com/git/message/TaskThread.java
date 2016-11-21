@@ -11,7 +11,8 @@ public class TaskThread extends Thread {
 		while (!Thread.interrupted()) {
 			try {
 				String msg = MessageUtil.blockingQueue.take();
-				logger.error(msg);
+				Thread.sleep(5000);
+				logger.error(msg+"发送...");
 			} catch (InterruptedException e) {
 				//当手动执行了shutdownNow()的时候，就会出现InterruptedException中断异常，这里进行置位
 				Thread.currentThread().interrupt();

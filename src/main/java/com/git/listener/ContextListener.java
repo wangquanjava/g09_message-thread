@@ -16,7 +16,7 @@ public class ContextListener implements ServletContextListener{
 	}
 
 	public void contextDestroyed(ServletContextEvent sce) {
-		MessageUtil.shutdownMessageThread();
+		MessageUtil.destroy();
 		logger.error("关闭服务器");
 	}
 
